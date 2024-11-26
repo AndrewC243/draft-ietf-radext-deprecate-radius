@@ -348,7 +348,7 @@ With the exception of a few attributes such as User-Password, all RADIUS traffic
 
 More discussion of location privacy is given in {{?RFC6280}}, which defines an "Architecture for Location and Location Privacy in Internet Applications".  However, that work was too late to have any practical impact on the design of the RADIUS protocol, as {{RFC5580}} had already been published.
 
-The effect is that any observer of non-TLS RADIUS traffic is able to obtain a substantial amount of personal identifiable information (PII) about users.  The observer can tell who is logging in to the network, what devices they are using, where they are logging in from, and their approximate location (usually city).  With location-based attributes as defined in {{RFC5580}}, a users location may be determined to within 15 or so meters outdoors, and with "meter-level accuracy indoors" {{WIFILOC}}.  An observer can also use RADIUS accounting packets to determine how long a user is online, and to track a summary of their total traffic (upload and download totals).
+The effect is that any observer of non-TLS RADIUS traffic is able to obtain a substantial amount of personal identifiable information (PII) about users.  The observer can tell who is logging in to the network, what devices they are using, where they are logging in from, and their approximate location (usually city).  With location-based attributes as defined in {{RFC5580}}, a user's location may be determined to within 15 or so meters outdoors, and with "meter-level accuracy indoors" {{WIFILOC}}.  An observer can also use RADIUS accounting packets to determine how long a user is online, and to track a summary of their total traffic (upload and download totals).
 
 When RADIUS/UDP is used across the public Internet, common Wi-Fi configurations allow the location of individuals to be tracked in real-time (usually 10 minute intervals), to within 15 meters.  The user devices can be identified, and also tracked.  Passwords can often be compromised by a resourceful attacker, or for MS-CHAP, by a hobbyist with a laptop.  Even when the packets do not contain any {{RFC5580}} location information for the user, the packets usually contain the MAC address of the Wi-Fi access point.  The MAC address and physical location of these devices are publicly available, and there are multiple services selling databases of this information.
 
@@ -478,7 +478,7 @@ The only solution to either issue would be to create a new protocol which is sec
 
 ## Other Issues
 
-There are many other issues with RADIUS which are unrelated to security or privact.  As of the time of writing this document, those issues are being collated in {{ISSUES}}.  The bulk of the problems noted in that Wiki are operational considerations, along with inconsistencies in the previous RADIUS specifications.
+There are many other issues with RADIUS which are unrelated to security or privacy.  As of the time of writing this document, those issues are being collated in {{ISSUES}}.  The bulk of the problems noted in that Wiki are operational considerations, along with inconsistencies in the previous RADIUS specifications.
 
 As the focus of this document is security, it does not address problems with the RADIUS protocol in general.  For example, there are known problems with the RADIUS state machine.  There are common practices which are secure but which are operationally expensive.  RADIUS accounting is known to be inaccurate and often inconsistent.
 
